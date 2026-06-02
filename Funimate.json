@@ -1,3 +1,4 @@
+try {
 //boiler plate by kakshi
 var obj = JSON.parse($response.body);
 
@@ -36,3 +37,8 @@ obj= {
 };
 
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("Funimate.json Error: " + e);
+  $done({});
+}

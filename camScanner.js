@@ -1,3 +1,4 @@
+try {
 var banhsbao = JSON.parse($response.body);
 const vipa = '/purchase/cs/query_property';
 const vipb = '/queryProperty';
@@ -174,3 +175,7 @@ if ($request.url.indexOf(tqzx) != -1){
 }
 
 $done({body : JSON.stringify(banhsbao)});
+} catch (e) {
+  console.log("camScanner.js Error: " + e);
+  $done({});
+}

@@ -1,3 +1,4 @@
+try {
 /* BeautyPlus Crack By duyvinh09
 */
 var objc = JSON.parse($response.body);
@@ -16,3 +17,8 @@ var objc = JSON.parse($response.body);
 }
 
 $done({body : JSON.stringify(objc)});
+
+} catch (e) {
+  console.log("BeautyPlus.js Error: " + e);
+  $done({});
+}

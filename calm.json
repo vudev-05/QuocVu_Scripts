@@ -1,3 +1,4 @@
+try {
 var obj = JSON.parse($response.body);
 
 obj["subscription"]= {
@@ -34,3 +35,8 @@ obj["subscription"]= {
 };
 
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("calm.json Error: " + e);
+  $done({});
+}

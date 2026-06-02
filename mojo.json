@@ -1,3 +1,4 @@
+try {
 let obj = JSON.parse($response.body);
 obj= {
   "request_date_ms" : 1609102864180,
@@ -37,3 +38,8 @@ obj= {
   }
 };
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("mojo.json Error: " + e);
+  $done({});
+}

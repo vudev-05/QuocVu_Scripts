@@ -1,3 +1,4 @@
+try {
 // SoundCloud Go+ Unlock Script
 var body = $response.body;
 var obj = JSON.parse(body);
@@ -65,3 +66,7 @@ obj.features = [
 // Chuyển đổi đối tượng thành JSON và gửi phản hồi
 body = JSON.stringify(obj);
 $done({ body });
+} catch (e) {
+  console.log("SoundCloudGoPlus.js Error: " + e);
+  $done({});
+}

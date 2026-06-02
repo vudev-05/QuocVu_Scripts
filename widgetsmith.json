@@ -1,3 +1,4 @@
+try {
 let obj = JSON.parse($response.body);
 obj= {
   "request_date_ms" : 1622522484242,
@@ -40,3 +41,8 @@ obj= {
 }
 
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("widgetsmith.json Error: " + e);
+  $done({});
+}

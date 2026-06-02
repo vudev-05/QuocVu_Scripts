@@ -1,3 +1,4 @@
+try {
 var obj = JSON.parse($response.body);
 
 obj= {
@@ -12,3 +13,8 @@ obj= {
 };
 
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("djay.json Error: " + e);
+  $done({});
+}

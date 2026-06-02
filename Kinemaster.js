@@ -1,3 +1,4 @@
+try {
 var obj = JSON.parse($response.body);
 
 obj= {
@@ -10,3 +11,7 @@ obj= {
 };
 
 $done({body: JSON.stringify(obj)});
+} catch (e) {
+  console.log("Kinemaster.js Error: " + e);
+  $done({});
+}

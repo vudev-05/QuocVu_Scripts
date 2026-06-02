@@ -1,3 +1,4 @@
+try {
 var obj = JSON.parse($response.body);
 
 obj={
@@ -76,3 +77,8 @@ obj={
   "status": 0
 }
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("unfoldtest.json Error: " + e);
+  $done({});
+}

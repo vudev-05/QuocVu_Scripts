@@ -1,3 +1,4 @@
+try {
 var objc = JSON.parse($response.body);
 
 objc = {
@@ -36,3 +37,7 @@ objc = {
 
 
 $done({ body: JSON.stringify(objc) });
+} catch (e) {
+  console.log("AlightMotion.js Error: " + e);
+  $done({});
+}

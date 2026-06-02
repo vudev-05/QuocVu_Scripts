@@ -1,3 +1,4 @@
+try {
 var obj = JSON.parse($response.body);
 
 obj={
@@ -79,3 +80,8 @@ obj={
   "customer_user_id": "b83df7f7-41ed-4b90-8375-15031b2a854f"
 }
 $done({body: JSON.stringify(obj)});
+
+} catch (e) {
+  console.log("reface.json Error: " + e);
+  $done({});
+}

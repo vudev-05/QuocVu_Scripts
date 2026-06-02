@@ -1,3 +1,4 @@
+try {
 body = $response.body.replace(/while.{7}\n/, "");
 let obj = JSON.parse(body);
 obj.entitlement.status="subscriber";
@@ -32,3 +33,8 @@ obj.entitlement.storage={
 obj.avatar.placeholder=true;
 body = JSON.stringify(obj); 
 $done({body});
+
+} catch (e) {
+  console.log("Lightroom.json Error: " + e);
+  $done({});
+}
