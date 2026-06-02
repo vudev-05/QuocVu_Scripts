@@ -40,7 +40,8 @@ var subscriptionData = {
       grace_period_expires_date: null,
       purchase_date: "2025-10-20T10:10:14Z",
       product_identifier: "locket_1600_1y",
-      expires_date: "9999-01-09T10:10:14Z"
+      expires_date: "9999-01-09T10:10:14Z",
+      ownership_type: "PURCHASED"
   };
 
 const match = Object.keys(mapping).find(e => ua.includes(e));
@@ -60,11 +61,17 @@ if (match) {
   } catch (err) {}
 
   if (!hasRealEntitlement) {
-      s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = subscriptionData) : obj.subscriber.subscriptions["locket_1600_1y"] = subscriptionData, obj.subscriber.entitlements[e] = locketGold;
+      if (s) {
+          locketGold.product_identifier = s;
+          obj.subscriber.subscriptions[s] = subscriptionData;
+      } else {
+          obj.subscriber.subscriptions["locket_1600_1y"] = subscriptionData;
+      }
+      obj.subscriber.entitlements[e] = locketGold;
   }
 } else {
   obj.subscriber.subscriptions["locket_1600_1y"] = subscriptionData;
-  obj.subscriber.entitlements.pro = locketGold;
+  obj.subscriber.entitlements["Gold"] = locketGold;
 }
 
 $done({

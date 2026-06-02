@@ -5,4 +5,11 @@
 // 👤 Author: Nguyễn Ngọc Anh Tú (z3rokaze)
 // ========================================
 
-function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
+var modifiedHeaders = $request.headers;
+var headersToDel = ["X-RevenueCat-ETag", "x-revenuecat-etag", "If-None-Match", "if-none-match"];
+for (var key in modifiedHeaders) {
+    if (headersToDel.includes(key) || headersToDel.includes(key.toLowerCase())) {
+        delete modifiedHeaders[key];
+    }
+}
+$done({headers: modifiedHeaders});
