@@ -4,12 +4,12 @@
 #!date=2026-06-03
 #!author=Quốc Vũ (vudev-05)
 #!homepage=https://github.com/vudev-05/QuocVu_Scripts
-#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/VIP.png
+#!icon=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/icons/VIP.png
 #!system=ios
 # stable-note=Optimized for stability, battery, low crash; premium endpoints preserved. Cleaned up dead scripts, added new unique API scripts.
 
 [General]
-# === [General] TỐI ƯU CHUẨN SHADOWROCKET (v2.0.1)         ===
+# 💎 === [General] TỐI ƯU CHUẨN SHADOWROCKET (v2.0.1)         === 💎
 
 # --- BYPASS SYSTEM: bỏ qua traffic hệ thống iOS ---
 # Bắt buộc nên bật trên Shadowrocket: tránh trễ Push Notification (APNs),
@@ -71,14 +71,14 @@ tun-excluded-routes = %APPEND% 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64
 # (Surge-only) always-real-ip = %APPEND% *.lan, *.local, *.msftconnecttest.com, *.msftncsi.com, detectportal.firefox.com, captive.apple.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com
 
 [Rule]
-# === BLOCK QUIC FOR YOUTUBE MITM ===
+# 💎 === BLOCK QUIC FOR YOUTUBE MITM === 💎
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 
-# === BLOCK QUIC FOR SPOTIFY MITM ===
+# 💎 === BLOCK QUIC FOR SPOTIFY MITM === 💎
 AND,((DOMAIN-KEYWORD,spotify), (PROTOCOL,UDP)),REJECT
 
-# === BLOCK WEBRTC LEAK (Specific servers) ===
+# 💎 === BLOCK WEBRTC LEAK (Specific servers) === 💎
 # Note: Generic KEYWORD stun/turn removed — breaks VoIP (FaceTime, WhatsApp, Zoom)
 # STABLE: disabled to avoid VoIP/WebRTC call break + battery retry loops
 # DOMAIN-SUFFIX,stun.l.google.com,REJECT
@@ -87,7 +87,7 @@ AND,((DOMAIN-KEYWORD,spotify), (PROTOCOL,UDP)),REJECT
 # DOMAIN-SUFFIX,stun3.l.google.com,REJECT
 # DOMAIN-SUFFIX,stun4.l.google.com,REJECT
 
-# === SPOTIFY ADS ===
+# 💎 === SPOTIFY ADS === 💎
 DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net,REJECT
 DOMAIN-SUFFIX,audio4-ak-spotify-com.akamaized.net,REJECT
 DOMAIN-SUFFIX,heads-ak-spotify-com.akamaized.net,REJECT
@@ -101,13 +101,13 @@ DOMAIN-SUFFIX,log.spotify.com,REJECT
 DOMAIN-SUFFIX,creativeservice-production.scdn.co,REJECT
 
 # ===========================================================
-# === CHẶN QUẢNG CÁO + CỜ BẠC/CÁ ĐỘ TỔNG HỢP (Ad Block) ===
-# === by vudev-05 ===
+# 💎 === CHẶN QUẢNG CÁO + CỜ BẠC/CÁ ĐỘ TỔNG HỢP (Ad Block) === 💎
+# 💎 === by vudev-05 === 💎
 # ===========================================================
 
-# ┌─────────────────────────────────────┐
-# │  PHẦN 1: CHẶN QUẢNG CÁO (AD BLOCK) │
-# └─────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 # --- 1.1 Google Ads / AdMob / DoubleClick ---
 DOMAIN-SUFFIX,adservice.google.com,REJECT-DROP
@@ -306,9 +306,9 @@ DOMAIN-SUFFIX,a-mo.net,REJECT
 DOMAIN-SUFFIX,adtarget.com.tr,REJECT
 DOMAIN-SUFFIX,vidoomy.com,REJECT
 
-# ┌──────────────────────────────────────┐
-# │  PHẦN 2: TRACKING & ANALYTICS SDKs  │
-# └──────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 # --- 2.1 Attribution / Mobile Measurement ---
 DOMAIN-SUFFIX,adjust.com,REJECT-DROP
@@ -378,9 +378,9 @@ DOMAIN-SUFFIX,permutive.com,REJECT-DROP
 # DOMAIN-SUFFIX,cookielaw.org,REJECT-DROP    # Disabled: có thể treo banner xin cookie trên 1 số web
 # DOMAIN-SUFFIX,launchdarkly.com,REJECT-DROP # Disabled: feature-flag, vài app phụ thuộc để bật tính năng
 
-# ┌─────────────────────────────────────┐
-# │  PHẦN 3: QUẢNG CÁO VIỆT NAM        │
-# └─────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 DOMAIN-SUFFIX,adservice.zaloapp.com,REJECT
 # DOMAIN-KEYWORD,zaloapp.com/ads,REJECT  # Disabled: DOMAIN-KEYWORD cannot match URL path
@@ -402,9 +402,9 @@ DOMAIN-SUFFIX,adnetwork.vn,REJECT
 DOMAIN-SUFFIX,mcads.vn,REJECT
 DOMAIN-SUFFIX,blueseed.tv,REJECT
 
-# ┌─────────────────────────────────────┐
-# │  PHẦN 4: POPUP / REDIRECT / SCAM    │
-# └─────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 DOMAIN-SUFFIX,popads.net,REJECT
 DOMAIN-SUFFIX,popcash.net,REJECT
@@ -443,9 +443,9 @@ DOMAIN-SUFFIX,vignatti.com,REJECT
 DOMAIN-SUFFIX,mybetterdl.com,REJECT
 DOMAIN-SUFFIX,clickfuse.com,REJECT
 
-# ┌──────────────────────────────────────────────────────────┐
-# │  PHẦN 5: CHẶN WEB CÁ ĐỘ / CỜ BẠC / CASINO (GAMBLING)  │
-# └──────────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 # --- 5.1 Cá độ / Cờ bạc phổ biến tại Việt Nam ---
 DOMAIN-SUFFIX,1xbet.com,REJECT
@@ -628,10 +628,10 @@ DOMAIN-KEYWORD,new88,REJECT
 # DOMAIN-KEYWORD,hi88,REJECT    # Disabled: may match sushi88.com, phi88.com etc.
 # DOMAIN-KEYWORD,sin88,REJECT   # Disabled: may match resin88.com etc.
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 6: AI SERVICES ROUTING (PROXY)                │
-# │  Nguồn: tatarinovms/ShadowRocketSimpleConfig         │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ║║
+# ╚╝
 
 # --- 6.1 OpenAI / ChatGPT ---
 DOMAIN-SUFFIX,openai.com,PROXY
@@ -706,10 +706,10 @@ DOMAIN-SUFFIX,ideogram.ai,PROXY
 DOMAIN-SUFFIX,leonardo.ai,PROXY
 DOMAIN-SUFFIX,civitai.com,PROXY
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 7: BỔ SUNG AD DOMAINS CÒN THIẾU              │
-# │  Nguồn: GMOogway + fmz200/wool_scripts               │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ║║
+# ╚╝
 
 # --- 7.1 Bổ sung Ad Networks ---
 DOMAIN-SUFFIX,ads-twitter.com,REJECT
@@ -754,10 +754,10 @@ DOMAIN-SUFFIX,minero.cc,REJECT
 DOMAIN-SUFFIX,jsecoin.com,REJECT
 DOMAIN-SUFFIX,coinhive-manager.com,REJECT
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 8: CHẶN TELEMETRY & TRACKING HỆ THỐNG         │
-# │  Nguồn: Johnshall/p-w-p                              │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ║║
+# ╚╝
 
 # --- 8.1 Microsoft Telemetry ---
 DOMAIN-SUFFIX,data.microsoft.com,REJECT-DROP
@@ -798,10 +798,10 @@ DOMAIN,mesu.apple.com,REJECT-DROP
 DOMAIN,gdmf.apple.com,REJECT-DROP
 DOMAIN,updates-http.apple.com,REJECT-DROP
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 9: GAMING SERVICES ROUTING (PROXY)             │
-# │  Nguồn: tatarinovms/ShadowRocketSimpleConfig          │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ║║
+# ╚╝
 
 # --- 9.1 PlayStation Network ---
 DOMAIN-SUFFIX,playstation.com,PROXY
@@ -838,9 +838,9 @@ DOMAIN-SUFFIX,battle.net,PROXY
 DOMAIN-SUFFIX,ubisoft.com,PROXY
 DOMAIN-SUFFIX,ubi.com,PROXY
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 10: STREAMING SERVICES (PROXY - Geo-unlock)    │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 # --- 10.1 Netflix ---
 DOMAIN-SUFFIX,netflix.com,PROXY
@@ -877,9 +877,9 @@ DOMAIN-SUFFIX,vrv.co,PROXY
 DOMAIN-SUFFIX,dazn.com,PROXY
 DOMAIN-SUFFIX,bilibili.tv,PROXY
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 11: SOCIAL MEDIA ROUTING (PROXY)               │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 # --- 11.1 Telegram ---
 DOMAIN-SUFFIX,telegram.org,PROXY
@@ -906,9 +906,9 @@ DOMAIN-SUFFIX,redditstatic.com,PROXY
 DOMAIN-SUFFIX,threads.net,PROXY
 DOMAIN-SUFFIX,web.whatsapp.com,PROXY
 
-# ┌──────────────────────────────────────────────────────┐
-# │  PHẦN 12: DEVELOPER TOOLS (PROXY)                    │
-# └──────────────────────────────────────────────────────┘
+# ╔╗
+# ║║
+# ╚╝
 
 # --- 12.1 GitHub / GitLab ---
 DOMAIN-SUFFIX,github.com,PROXY
@@ -933,8 +933,8 @@ DOMAIN-SUFFIX,stackexchange.com,PROXY
 DOMAIN-SUFFIX,medium.com,PROXY
 DOMAIN-SUFFIX,dev.to,PROXY
 
-# ┌──────────────────────────────────────────────────────┐
-# === SECTION 13: STABLE DIRECT ===
+# ╔╗
+# 💎 === SECTION 13: STABLE DIRECT === 💎
 # L?u ?: ??t DIRECT ? ??y (sau c?c rule ch?n ads/tracker) ?? kh?ng v? t?nh b? qua ad-block.
 # Kh?ng DIRECT c?c endpoint premium nh? api.revenuecat.com, api.rc-backup.com, buy.itunes.apple.com.
 
@@ -1015,19 +1015,19 @@ DOMAIN-SUFFIX,vnexpress.net,DIRECT
 GEOIP,VN,DIRECT
 
 [Header Rewrite]
-# === YOUTUBE NONCE ===
+# 💎 === YOUTUBE NONCE === 💎
 ^https?://www\.youtube\.com/youtubei/v1/player header-replace x-youtube-client-version 2.20240101.00.00
-# === REVENUECAT REMOVE ETAG (Locket Gold + all RC apps) ===
+# 💎 === REVENUECAT REMOVE ETAG (Locket Gold + all RC apps) === 💎
 ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del x-revenuecat-etag
 ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del X-RevenueCat-ETag
 ^https?:\/\/api\.rc-backup\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del x-revenuecat-etag
 ^https?:\/\/api\.rc-backup\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del X-RevenueCat-ETag
 
-# === SPOTIFY REMOVE CACHE HEADERS ===
+# 💎 === SPOTIFY REMOVE CACHE HEADERS === 💎
 ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
 
 [URL Rewrite]
-# === YOUTUBE ===
+# 💎 === YOUTUBE === 💎
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
@@ -1035,11 +1035,11 @@ GEOIP,VN,DIRECT
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
 
 [Map Local]
-# === YOUTUBE - Block initplayback preroll ads ===
+# 💎 === YOUTUBE - Block initplayback preroll ads === 💎
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=200
 
 [Script]
-# === YOUTUBE PREMIUM - ekaznyra Version (2026-05-09) ===
+# 💎 === YOUTUBE PREMIUM - ekaznyra Version (2026-05-09) === 💎
 # Blocks all ads + enables background playback + PiP
 youtube.request = type=http-request, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch), requires-body=1, max-size=-1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_youtube.response.js
 
@@ -1049,181 +1049,181 @@ youtube.response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.
 spotify-json = type=http-request, pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/, requires-body=0, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/app2smile_spotify-json.js
 spotify-proto = type=http-response, pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$, requires-body=1, binary-body-mode=1, max-size=0, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/app2smile_spotify-proto.js, script-update-interval=0
 
-# === SOUNDCLOUD GO+ - Marol62926/MarScrpt (yfamilys, 2026-05-19) ===
+# 💎 === SOUNDCLOUD GO+ - Marol62926/MarScrpt (yfamilys, 2026-05-19) === 💎
 soundcloud-response = type=http-response, pattern=^https?:\/\/api-mobile\.soundcloud\.com\/configuration\/ios, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_soundcloud.js, requires-body=1, max-size=0, timeout=15
 
-# === PICSART GOLD - ekaznyra (2026-04-21) ===
+# 💎 === PICSART GOLD - ekaznyra (2026-04-21) === 💎
 picsart-response = type=http-response, pattern=^https:\/\/api\.picsart\.com\/gw-v2\/shop\/subscription\/apple\/purchases, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_PicsArt.js, requires-body=1, max-size=0, timeout=60
 picsart-storages = type=http-response, pattern=^https:\/\/api\.picsart\.com\/gw-v2\/cloud-storage\/v1\/me\/storages, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_PicsArt.js, requires-body=1, max-size=0, timeout=60
 
-# === PICSART (NobyDa show/me endpoint) - yfamilys (2026-05-19) ===
+# 💎 === PICSART (NobyDa show/me endpoint) - yfamilys (2026-05-19) === 💎
 picsart-nobyda = type=http-response, pattern=^https?:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/NobyDa_PicsArt.js, requires-body=1, max-size=0, timeout=60
 
-# === LIGHTROOM PREMIUM - litieyin/AD_VIP (yfamilys, 2026-05-19) ===
+# 💎 === LIGHTROOM PREMIUM - litieyin/AD_VIP (yfamilys, 2026-05-19) === 💎
 lightroom-response = type=http-response, pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/litieyin_lightroom.js, requires-body=1, timeout=10, max-size=131072
 
-# === PHOTOSHOP EXPRESS PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === PHOTOSHOP EXPRESS PREMIUM - ekaznyra (2026-05-09) === 💎
 photoshop-response = type=http-response, pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_photoshop.js, requires-body=1, timeout=10, max-size=131072
 
-# === EMBY PREMIERE - ekaznyra (2026-05-09) ===
+# 💎 === EMBY PREMIERE - ekaznyra (2026-05-09) === 💎
 emby-response = type=http-response, pattern=^https?:\/\/mb3admin\.com\/admin\/service\/registration\/validateDevice, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_emby.js, requires-body=1, max-size=0, timeout=10
 
-# === KINEMASTER PRO - ekaznyra (2026-04-21) ===
+# 💎 === KINEMASTER PRO - ekaznyra (2026-04-21) === 💎
 kinemaster-response = type=http-response, pattern=^https:\/\/api-account\.kinemasters\.com\/v\d\/user\/subscribe$, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_Kinemaster.js, requires-body=1, max-size=0, timeout=10
 
-# === DJAY PRO - ekaznyra (2026-05-09) ===
+# 💎 === DJAY PRO - ekaznyra (2026-05-09) === 💎
 djay-response = type=http-response, pattern=^https:\/\/app\.algoriddim\.com\/api\/v1\/validate-receipt, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_djay.js, requires-body=1, timeout=10, max-size=131072
 
-# === CALM PREMIUM - Alex0510/Eric (yfamilys, 2026-05-19) ===
+# 💎 === CALM PREMIUM - Alex0510/Eric (yfamilys, 2026-05-19) === 💎
 calm-response = type=http-response, pattern=^https?:\/\/api\.calm\.com\/(me|device|ios\/receipt), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Alex0510_caml.js, requires-body=1, max-size=0, timeout=10
 
-# === BUSUU PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === BUSUU PREMIUM - ekaznyra (2026-05-09) === 💎
 busuu-response = type=http-response, pattern=^https:\/\/api\.busuu\.com\/users\/me, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_bussu.js, requires-body=1, timeout=10, max-size=131072
 
-# === HEADSPACE PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === HEADSPACE PREMIUM - ekaznyra (2026-05-09) === 💎
 headspace-response = type=http-response, pattern=^https:\/\/api\.prod\.headspace\.com\/.*\/user-subscriptions, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_headspace.js, requires-body=1, timeout=10, max-size=131072
 
-# === ALIGHT MOTION PRO - ekaznyra (2026-04-21) ===
+# 💎 === ALIGHT MOTION PRO - ekaznyra (2026-04-21) === 💎
 alightmotion-response = type=http-response, pattern=^https:\/\/us-central1-alight-creative\.cloudfunctions\.net\/getAccountStatusAndLicenses, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_AlightMotion.js, requires-body=1, max-size=0, timeout=10
 
-# === WINK FOREVER VIP - yqc007 / yfamilys (2026-05-19) ===
+# 💎 === WINK FOREVER VIP - yqc007 / yfamilys (2026-05-19) === 💎
 wink-response = type=http-response, pattern=^https?:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json, requires-body=1, max-size=0, timeout=10, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/yqc007_WinkForeverVipCrack.js
 
-# === TRUECALLER PREMIUM - ekaznyra (2026-04-21) ===
+# 💎 === TRUECALLER PREMIUM - ekaznyra (2026-04-21) === 💎
 truecaller-response = type=http-response, pattern=^https:\/\/premium-(.+)\.truecaller\.com\/v\d\/(subscriptions|products\/apple), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_TrueCaller.js, requires-body=1, max-size=0, timeout=10
 
-# === CAMSCANNER PREMIUM - ekaznyra (2026-04-21) ===
+# 💎 === CAMSCANNER PREMIUM - ekaznyra (2026-04-21) === 💎
 camscanner-response = type=http-response, pattern=^https:\/\/(api|api-cs.*)\.intsig\.net\/(purchase\/cs\/query_prop|queryProperty|getPrivilegeItem), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_camScanner.js, requires-body=1, max-size=0, timeout=15
 
-# === BEAUTYPLUS PREMIUM - ekaznyra (2026-04-21) ===
+# 💎 === BEAUTYPLUS PREMIUM - ekaznyra (2026-04-21) === 💎
 beautyplus-response = type=http-response, pattern=^https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.com\/api\/v1\/asset\/balance), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_BeautyPlus.js, requires-body=1, timeout=60, max-size=0
 
-# === REVENUECAT MULTI-APP (Locket Gold) - ekaznyra (2026-04-21) ===
+# 💎 === REVENUECAT MULTI-APP (Locket Gold) - ekaznyra (2026-04-21) === 💎
 revenuecat-response = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^\/]+$), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_revenuecat_multi.js, requires-body=1, timeout=60, max-size=-1
 
-# === REVENUECAT BACKUP DOMAIN (rc-backup fallback) - ekaznyra (2026-05-09) ===
+# 💎 === REVENUECAT BACKUP DOMAIN (rc-backup fallback) - ekaznyra (2026-05-09) === 💎
 revenuecat-backup = type=http-response, pattern=^https:\/\/api\.rc-backup\.com\/.+\/(receipts$|subscribers\/[^\/]+$), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_revenuecat_multi.js, requires-body=1, max-size=-1, timeout=60
 
-# === VSCO PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === VSCO PREMIUM - ekaznyra (2026-05-09) === 💎
 vsco-response = type=http-response, pattern=^https:\/\/vsco\.co\/api\/subscriptions\/2\.1\/user-subscriptions, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_VSCO.js, requires-body=1, timeout=10, max-size=131072
 
-# === FUNIMATE PRO - ekaznyra (2026-05-09) ===
+# 💎 === FUNIMATE PRO - ekaznyra (2026-05-09) === 💎
 funimate-response = type=http-response, pattern=^https:\/\/api\.funimate\.com\/users\/me, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_funimate.js, requires-body=1, timeout=10, max-size=131072
 
-# === ITUNES PREMIUM (250+ Apps) - ekaznyra (2026-05-09) ===
+# 💎 === ITUNES PREMIUM (250+ Apps) - ekaznyra (2026-05-09) === 💎
 itunes-response = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_iTunes.js, requires-body=1, max-size=-1, timeout=60
 
-# === SNOW PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === SNOW PREMIUM - ekaznyra (2026-05-09) === 💎
 snow-response = type=http-response, pattern=^https?:\/\/user-snow-api\.snow\.me\/v\d\/purchase\/subscription\/subscriber\/status, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_Snow.js, requires-body=1, max-size=-1, timeout=60
 
-# === B612 KAJI VIP - ddgksf2013 (yfamilys, 2026-05-19) ===
+# 💎 === B612 KAJI VIP - ddgksf2013 (yfamilys, 2026-05-19) === 💎
 b612-response = type=http-response, pattern=^https?:\/\/user-kaji-api\.b612kaji\.com\/v\d\/purchase\/subscription\/subscriber\/status, script-path=https://github.com/deezertidal/private/raw/master/js-backup/Crack/612.js, requires-body=1, max-size=-1, timeout=60
 
-# === MEITU XIUXIU PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === MEITU XIUXIU PREMIUM - ekaznyra (2026-05-09) === 💎
 meitu-response = type=http-response, pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_MeiTuXiuXiu.js, requires-body=1, max-size=0, timeout=60
 
-# === WPS OFFICE PREMIUM - I-am-R-E (yfamilys, 2026-05-19) ===
+# 💎 === WPS OFFICE PREMIUM - I-am-R-E (yfamilys, 2026-05-19) === 💎
 wps-response = type=http-response, pattern=^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/overview$, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/I-am-R-E_WPS.js, requires-body=1, max-size=0, timeout=10
 
-# === XMIND PREMIUM - ekaznyra (2026-05-09) ===
+# 💎 === XMIND PREMIUM - ekaznyra (2026-05-09) === 💎
 xmind-response = type=http-response, pattern=^https?:\/\/www\.xmind\.(cn|net|app)\/_res\/devices, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/ekaznyra_xmind.js, requires-body=1, max-size=0, timeout=10
 
-# === ALARMY PREMIUM ===
+# 💎 === ALARMY PREMIUM === 💎
 alarmy-response = type=http-response, pattern=^https:\/\/ars\.alar\.my\/api\/v2\/user\/sync, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_alarmy.js, requires-body=1, max-size=0, timeout=10
 
-# === GRAMMARLY PREMIUM - yqc007 (yfamilys, 2026-05-19) ===
+# 💎 === GRAMMARLY PREMIUM - yqc007 (yfamilys, 2026-05-19) === 💎
 grammarly-response = type=http-response, pattern=^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/yqc007_GrammarlyPremiumCrack.js, requires-body=1, max-size=0, timeout=10
 
-# === NOTABILITY PLUS - litieyin (yfamilys, 2026-05-19) ===
+# 💎 === NOTABILITY PLUS - litieyin (yfamilys, 2026-05-19) === 💎
 notability-response = type=http-response, pattern=^https:\/\/notability\.com\/subscriptions, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/litieyin_notability.js, requires-body=1, max-size=0, timeout=10
 
-# === PHOTOMATH PLUS - ddgksf2013 (yfamilys, 2026-05-19) ===
+# 💎 === PHOTOMATH PLUS - ddgksf2013 (yfamilys, 2026-05-19) === 💎
 photomath-response = type=http-response, pattern=^https?:\/\/lapi\.photomath\.net\/v4\/me, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/deezertidal_poh.js, requires-body=1, max-size=0, timeout=10
 
-# === SMALLPDF PRO - Marol62926 (yfamilys, 2026-05-19) ===
+# 💎 === SMALLPDF PRO - Marol62926 (yfamilys, 2026-05-19) === 💎
 smallpdf-response = type=http-response, pattern=^https?:\/\/pro\.smallpdf\.com\/pro\/account, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_smallpdf.js, requires-body=1, max-size=0, timeout=10
 
-# === PEAK PRO - chamberlen (yfamilys, 2026-05-19) ===
+# 💎 === PEAK PRO - chamberlen (yfamilys, 2026-05-19) === 💎
 peak-response = type=http-response, pattern=^https:\/\/billing\.peakcloud\.org\/billing\/2\/user\/me, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/deezertidal_peak.js, requires-body=1, max-size=0, timeout=10
 
-# === POLARR PRO - NobyDa (yfamilys, 2026-05-19) ===
+# 💎 === POLARR PRO - NobyDa (yfamilys, 2026-05-19) === 💎
 polarr-response = type=http-response, pattern=^https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts\/confirmation, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/NobyDa_Polarr.js, requires-body=1, max-size=0, timeout=10
 
-# === MYFITNESSPAL PREMIUM - Marol62926 (yfamilys, 2026-05-19) ===
+# 💎 === MYFITNESSPAL PREMIUM - Marol62926 (yfamilys, 2026-05-19) === 💎
 myfitnesspal-response = type=http-response, pattern=^https?:\/\/premium-api\.myfitnesspal\.com\/v3\/subscriptions\/MFP\/, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_myFitnessPal.js, requires-body=1, max-size=0, timeout=10
 
-# === MUSIXMATCH PREMIUM - Marol62926 (yfamilys, 2026-05-19) ===
+# 💎 === MUSIXMATCH PREMIUM - Marol62926 (yfamilys, 2026-05-19) === 💎
 musixmatch-response = type=http-response, pattern=^https?:\/\/apic\.musixmatch\.com\/ws\/1\.1\/config\.get, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_musixmatch.js, requires-body=1, max-size=0, timeout=10
 
-# === FIMO CAMERA - ddgksf2013 (yfamilys, 2026-05-19) ===
+# 💎 === FIMO CAMERA - ddgksf2013 (yfamilys, 2026-05-19) === 💎
 fimo-response = type=http-response, pattern=^https:\/\/server\.yoyiapp\.com\/fimo-user\/user$, script-path=https://github.com/deezertidal/private/raw/master/js-backup/Crack/fimo.js, requires-body=1, max-size=0, timeout=10
 
-# === VARLENS PREMIUM - I-am-R-E (yfamilys, 2026-05-19) ===
+# 💎 === VARLENS PREMIUM - I-am-R-E (yfamilys, 2026-05-19) === 💎
 varlens-response = type=http-response, pattern=^https:\/\/mid\.zineapi\.com\/@varlens\/api\/user\/info\/, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Varlens.js, requires-body=1, max-size=0, timeout=10
 
-# === BOOM EQUALIZER - ddgksf2013 (yfamilys, 2026-05-24) ===
+# 💎 === BOOM EQUALIZER - ddgksf2013 (yfamilys, 2026-05-24) === 💎
 boom-response = type=http-response, pattern=^https:\/\/apimboom2\.globaldelight\.net\/itunesreceipt_v2\.php$, script-path=https://github.com/deezertidal/private/raw/master/js-backup/Crack/boom.js, requires-body=1, max-size=0, timeout=10
 
-# === FANTASTICAL PREMIUM - ddgksf2013 (yfamilys, 2026-05-24) ===
+# 💎 === FANTASTICAL PREMIUM - ddgksf2013 (yfamilys, 2026-05-24) === 💎
 fantastical-response = type=http-response, pattern=^https:\/\/api\.flexibits\.com\/(v1\/auth\/device|v1\/account\/details), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/deezertidal_fantastical.js, requires-body=1, max-size=0, timeout=10
 
-# === CRAFT PREMIUM - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === CRAFT PREMIUM - 89996462 (yfamilys, 2026-05-24) === 💎
 craft-response = type=http-response, pattern=^https:\/\/api\.craft\.do\/auth\/v2\/profile, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Craft.js, requires-body=1, max-size=0, timeout=10
 
-# === DAY ONE PREMIUM - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === DAY ONE PREMIUM - 89996462 (yfamilys, 2026-05-24) === 💎
 dayone-response = type=http-response, pattern=^https?:\/\/dayone\.app\/api\/v2\/users\/(receipt|account-status), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_dayone.js, requires-body=1, max-size=0, timeout=10
 
-# === NICEGRAM PREMIUM - I-am-R-E (yfamilys, 2026-05-24) ===
+# 💎 === NICEGRAM PREMIUM - I-am-R-E (yfamilys, 2026-05-24) === 💎
 nicegram-request = type=http-request, pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/I-am-R-E_Nicegram.js, requires-body=0, max-size=0, timeout=10
 
-# === ILOVEPDF PREMIUM - Marol62926 (yfamilys, 2026-05-24) ===
+# 💎 === ILOVEPDF PREMIUM - Marol62926 (yfamilys, 2026-05-24) === 💎
 ilovepdf-response = type=http-response, pattern=^https?:\/\/service\.ilovepdf\.com\/v1\/user, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_lovePdf.js, requires-body=1, max-size=0, timeout=10
 
 
 
-# === iTRANSLATE PRO (dịch thuật) - 89996462 ===
+# 💎 === iTRANSLATE PRO (dịch thuật) - 89996462 === 💎
 itranslate-request = type=http-request, pattern=^https:\/\/ssl-api\.itranslateapp\.com\/accounts\/v\d\/subscriptions\/verify\/ios, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_iTranslate.js, requires-body=1, max-size=0, timeout=10
 
-# === LINGVIST HỌC NGOẠI NGỮ - 89996462 ===
+# 💎 === LINGVIST HỌC NGOẠI NGỮ - 89996462 === 💎
 lingvist-response = type=http-response, pattern=^https:\/\/payment-api\.lingvist\.com\/.+\/user\/services, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Lingvist.js, requires-body=1, max-size=0, timeout=10
 
-# === BENDING SPOONS BUNDLE (Splice, Remini, FilmicPro, Focos, 30DayFitness...) - 89996462 ===
+# 💎 === BENDING SPOONS BUNDLE (Splice, Remini, FilmicPro, Focos, 30DayFitness...) - 89996462 === 💎
 bendingspoons-response = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Focos.js, requires-body=1, max-size=0, timeout=10
 
-# === ADOBE SCAN (PDF Scanner) - Marol62926 ✅ VERIFIED ===
+# 💎 === ADOBE SCAN (PDF Scanner) - Marol62926 ✅ VERIFIED === 💎
 adobescan-response = type=http-response, pattern=^https?:\/\/lcs-mobile-cops\.adobe\.io\/.+, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_adobeScanPdf.js, requires-body=1, max-size=0, timeout=10
 
-# === BILIBILI (CN Video Platform) - Marol62926 ✅ VERIFIED ===
+# 💎 === BILIBILI (CN Video Platform) - Marol62926 ✅ VERIFIED === 💎
 bilibili-response = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_bilibili.js, requires-body=1, max-size=0, timeout=10
 
-# === MONDLY PREMIUM - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === MONDLY PREMIUM - 89996462 (yfamilys, 2026-05-24) === 💎
 mondly-response = type=http-response, pattern=^https:\/\/api\.mondlylanguages\.com\/v3\/ios\/user\/sync, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Mondly.js, requires-body=1, max-size=0, timeout=10
 
-# === MEMRISE PREMIUM - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === MEMRISE PREMIUM - 89996462 (yfamilys, 2026-05-24) === 💎
 memrise-response = type=http-response, pattern=^https:\/\/api\.memrise\.com\/v1\.18, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Memrise.js, requires-body=1, max-size=0, timeout=10
 
-# === ALOHA BROWSER PREMIUM - Marol62926 (yfamilys, 2026-05-24) ===
+# 💎 === ALOHA BROWSER PREMIUM - Marol62926 (yfamilys, 2026-05-24) === 💎
 aloha-response = type=http-response, pattern=^https?:\/\/api\.alohaprofile\.com\/v1\/profile_info, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_aloha.js, requires-body=1, max-size=0, timeout=10
 
-# === DAILY YOGA PREMIUM - Marol62926 (yfamilys, 2026-05-24) ===
+# 💎 === DAILY YOGA PREMIUM - Marol62926 (yfamilys, 2026-05-24) === 💎
 dailyyoga-response = type=http-response, pattern=^https?:\/\/pre\.dailyyoga\.com\/h2oapi\/user\/getUserDetail, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_dailyYoga.js, requires-body=1, max-size=0, timeout=10
 
-# === ACCUWEATHER PREMIUM - Marol62926 (yfamilys, 2026-05-24) ===
+# 💎 === ACCUWEATHER PREMIUM - Marol62926 (yfamilys, 2026-05-24) === 💎
 accuweather-response = type=http-response, pattern=^https?:\/\/app-subscription-proxy\.accuweather\.com\/subscriptions\/v1\/apple\/validate, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_accuWeather.js, requires-body=1, max-size=0, timeout=10
 
-# === ENDEL FOCUS/SLEEP - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === ENDEL FOCUS/SLEEP - 89996462 (yfamilys, 2026-05-24) === 💎
 endel-response = type=http-response, pattern=^https:\/\/api-production\.endel\.io\/v4\/call, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Endel.js, requires-body=1, max-size=0, timeout=10
 
-# === FLOMO NOTES - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === FLOMO NOTES - 89996462 (yfamilys, 2026-05-24) === 💎
 flomo-response = type=http-response, pattern=^https:\/\/flomoapp\.com\/api\/v1\/user\/me, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_flomo.js, requires-body=1, max-size=0, timeout=10
 
-# === DRAFTS PRO - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === DRAFTS PRO - 89996462 (yfamilys, 2026-05-24) === 💎
 drafts-response = type=http-response, pattern=^https:\/\/backend\.getdrafts\.com\/api\/v1\/verification\/verify_receipt, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_Drafts.js, requires-body=1, max-size=0, timeout=10
 
-# === KEEP FITNESS PREMIUM - 89996462 (yfamilys, 2026-05-24) ===
+# 💎 === KEEP FITNESS PREMIUM - 89996462 (yfamilys, 2026-05-24) === 💎
 keep-response = type=http-response, pattern=^https:\/\/api\.gotokeep\.com, script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/89996462_keep.js, requires-body=1, max-size=0, timeout=10
 
-# === INVIDEO PREMIUM - Marol62926 (yfamilys, 2026-05-24) ===
+# 💎 === INVIDEO PREMIUM - Marol62926 (yfamilys, 2026-05-24) === 💎
 invideo-response = type=http-response, pattern=^https?:\/\/payments\.invideo\.io\/(verify_purchase|subscription), script-path=https://raw.githubusercontent.com/vudev-05/QuocVu_Scripts/main/Marol62926_filmr.js, requires-body=1, max-size=0, timeout=10
 
 [MITM]
